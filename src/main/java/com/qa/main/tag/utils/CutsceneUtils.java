@@ -11,7 +11,6 @@ import com.qa.main.tag.character.Character;
 public class CutsceneUtils {
 	
 	private final Logger log = LogManager.getLogger();
-	private Character character = new Character();
 
 	public void printWithDelays(String data, TimeUnit unit, long delay) throws InterruptedException{
 		for (char ch : data.toCharArray()) {

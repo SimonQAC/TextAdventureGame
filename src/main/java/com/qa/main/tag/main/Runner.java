@@ -15,7 +15,7 @@ public class Runner {
 			Game game = new Game();
 			game.gameSystem();
 
-			log.info("Thanks for Playing!");
+			log.info("\n Thanks for Playing!");
 			Utils.input.close();
 		
 

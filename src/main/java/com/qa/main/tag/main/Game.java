@@ -5,22 +5,22 @@ import com.qa.main.tag.utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.main.tag.character.Character;
 import com.qa.main.tag.cutscenes.*;
+import com.qa.main.tag.levels.Level1;
 
 public class Game {
 	
-	private Character character = new Character();
 	private int selection;
 	public String name;
 	
 	public final Logger log = LogManager.getLogger();
 	
 	introCutscene ics = new introCutscene();
+	Level1 l1 = new Level1();
 	
 	
 	public Game() {
-		this.name = name;
+
 	}
 	
 	public void gameSystem() {
@@ -30,14 +30,15 @@ public class Game {
 		if (name == null) {
 			mainMenu();
 		}
-		log.info(name);
 		try {
-			ics.play();
+			ics.play(name);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		log.info(name);
+		
+		l1.play(name);
+		
 
 	}
 
