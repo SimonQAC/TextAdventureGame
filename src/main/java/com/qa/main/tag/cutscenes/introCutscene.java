@@ -29,7 +29,7 @@ public class introCutscene {
 				"~~,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n" + 
 				"~;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,  ______   ---------   _____     ------\n");
 		csu.printWithDelays("You, " + name + " wake up, in a new scary place, upon further\n"+
-							"inspection, you notice that you are in a \n", TimeUnit.MILLISECONDS, 100);
+							"inspection, you notice that you are in a", TimeUnit.MILLISECONDS, 100);
 		csu.printWithDelays("... \n", TimeUnit.MILLISECONDS, 1000);
 		log.info(".d8888b 888  888  888 8888b. 88888b.d88b. 88888b.  \r\n" + 
 							"88K     888  888  888    \"88b888 \"888 \"88b888 \"88b \r\n" + 

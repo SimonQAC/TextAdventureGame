@@ -35,7 +35,7 @@ public class Level1 {
 	    	output = checkState();
 	    	break;
 	    case 2:
-	    	log.info("Going right...");
+	    	log.info("Going right...\n");
 	    	encounterNumber();
 	    	output = checkState();
 	      break;
@@ -47,8 +47,8 @@ public class Level1 {
 	}
 	
 	private int encounterNumber() {
-		int randomNum = ThreadLocalRandom.current().nextInt(1, 4);
-		
+		int randomNum = (int) ((Math.random() * (3 - 1))+1);
+		log.info(randomNum);
 		switch (randomNum) {
 		case (1):
 			state = Encounters.TREASURE;
@@ -66,11 +66,11 @@ public class Level1 {
 	private String checkState() {
 		switch (state) {
 		case TREASURE:
-			return "Treasure found!";
+			return "You found treasure!";
 		case DANGER:
-			return "Danger found!";
+			return "You found danger!";
 		case EMPTY:
-			return "Nothing found!";
+			return "You found nothing!";
 		default:
 			return "Nothing found!";
 		}
