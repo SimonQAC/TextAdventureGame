@@ -1,21 +1,25 @@
 package com.qa.main.tag.character;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.qa.main.tag.utils.Utils;
 
 
 public class Character {
 	
-	private String name = "empty";
+	public final Logger log = LogManager.getLogger();
+	private String name = null;
 
 	public void character() {
-		this.name = name;
+		name = getName();
 	}
 	
 
 
 	public void create() {
 		Utils.input.nextLine();
-		Utils.log.info("Pleae enter a name: ");
+		log.info("Pleae enter a name: ");
 		setName(Utils.input.nextLine());
 	}
 	

@@ -2,24 +2,39 @@ package com.qa.main.tag.main;
 
 import com.qa.main.tag.utils.Utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.qa.main.tag.character.Character;
+import com.qa.main.tag.cutscenes.*;
 
 public class Game {
 	
-	private Character character;
+	private Character character = new Character();
 	private int selection;
+	public String name = character.getName();
+	
+	public final Logger log = LogManager.getLogger();
+	
+	introCutscene ics = new introCutscene();
 	
 	
 	public Game() {
-		this.character = new Character();
+
 	}
 	
 	public void gameSystem() {
 		
 		mainMenu();
 		
-		if (character.getName() != "empty") {
-			Utils.log.info("Hello " + character.getName());
+		if (character.getName() == null) {
+			mainMenu();
+		}
+		try {
+			ics.play();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -28,8 +43,8 @@ public class Game {
 	
 	public void mainMenu() {
 		
-		Utils.log.info(" ------TEXT ADVENTURE GAME-----");
-	    Utils.log.info(
+		log.info(" ------TEXT ADVENTURE GAME-----\n");
+	    log.info(
 	            "Select an option: \n" +
 	            "  1) New Game\n" +
 	            "  2) Quit\n" 
@@ -38,15 +53,15 @@ public class Game {
 	         
 	    switch (selection) {
 	    case 1:
-	    	Utils.log.info("Creating Character");
+	    	log.info("Creating Character \n");
 	    	character.create();
 	    	break;
 	    case 2:
-	    	Utils.log.info("Exiting...");
+	    	log.info("Exiting...");
 	    	System.exit(1);
 	      break;
 	    default:
-	    	Utils.log.info("Invalid Selection");
+	    	log.info("Invalid Selection");
 	    	break;
 	    }
 
