@@ -12,7 +12,7 @@ public class Game {
 	
 	private Character character = new Character();
 	private int selection;
-	public String name = character.getName();
+	public String name;
 	
 	public final Logger log = LogManager.getLogger();
 	
@@ -20,22 +20,24 @@ public class Game {
 	
 	
 	public Game() {
-
+		this.name = name;
 	}
 	
 	public void gameSystem() {
 		
 		mainMenu();
 		
-		if (character.getName() == null) {
+		if (name == null) {
 			mainMenu();
 		}
+		log.info(name);
 		try {
 			ics.play();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		log.info(name);
 
 	}
 
@@ -54,7 +56,9 @@ public class Game {
 	    switch (selection) {
 	    case 1:
 	    	log.info("Creating Character \n");
-	    	character.create();
+			Utils.input.nextLine();
+			log.info("Pleae enter a name: ");
+			setName(Utils.input.nextLine());
 	    	break;
 	    case 2:
 	    	log.info("Exiting...");
@@ -66,6 +70,16 @@ public class Game {
 	    }
 
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }
 
 

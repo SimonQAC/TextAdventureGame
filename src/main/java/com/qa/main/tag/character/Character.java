@@ -9,7 +9,7 @@ import com.qa.main.tag.utils.Utils;
 public class Character {
 	
 	public final Logger log = LogManager.getLogger();
-	private String name = null;
+	private String name;
 
 	public void character() {
 		name = getName();
@@ -18,9 +18,7 @@ public class Character {
 
 
 	public void create() {
-		Utils.input.nextLine();
-		log.info("Pleae enter a name: ");
-		setName(Utils.input.nextLine());
+
 	}
 	
 	public void reset() {
