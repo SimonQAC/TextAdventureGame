@@ -48,7 +48,6 @@ public class Level1 {
 	
 	private int encounterNumber() {
 		int randomNum = (int) ((Math.random() * (3 - 1))+1);
-		log.info(randomNum);
 		switch (randomNum) {
 		case (1):
 			state = Encounters.TREASURE;
