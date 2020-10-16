@@ -14,6 +14,7 @@ public class Character {
 
 
 	public void create() {
+		Utils.input.nextLine();
 		Utils.log.info("Pleae enter a name: ");
 		setName(Utils.input.nextLine());
 	}

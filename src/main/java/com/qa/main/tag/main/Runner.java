@@ -10,7 +10,7 @@ public class Runner {
 			Game game = new Game();
 			game.gameSystem();
 
-			Utils.log.info("Good bye!");
+			Utils.log.info("Thanks for Playing!");
 			Utils.input.close();
 		
 
